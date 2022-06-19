@@ -4,7 +4,7 @@
 
     <color name="wocr_primary_dark">#00897B</color>
     <color name="wocr_primary">#26a69a</color>
-    <color name="wocr_accent">#26a69a</color>
+    <color name="wocr_accent">@android:color/holo_red_dark</color>
     <color name="wocr_default_window_background">#000</color>
     <color name="wocr_card_shadow_color">#a5080808</color>
     <color name="wocr_manual_input_color_pressed">#20ffffff</color>

@@ -15,6 +15,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
+
 import cards.pay.paycardsrecognizer.sdk.R;
 import cards.pay.paycardsrecognizer.sdk.ndk.RecognitionConstants;
 import cards.pay.paycardsrecognizer.sdk.ndk.RecognitionResult;
@@ -135,8 +138,11 @@ public class CardDetectionStateView extends View {
     }
 
     private void initCornerDrawables(Context context) {
-        mCornerTopLeftDrawable = (BitmapDrawable) context.getResources().getDrawable(R.drawable.wocr_card_frame_rect_corner_top_left);
-
+        BitmapDrawable tempDrawable = (BitmapDrawable) context.getResources().getDrawable(R.drawable.wocr_card_frame_rect_corner_top_left);
+        Drawable mutatedDrawable = DrawableCompat.wrap(tempDrawable).mutate();
+        int color = ContextCompat.getColor(getContext(), android.R.color.holo_purple);
+        DrawableCompat.setTint(mutatedDrawable, color);
+        mCornerTopLeftDrawable = (BitmapDrawable) mutatedDrawable;
         Matrix m = new Matrix();
         Bitmap bitmap = mCornerTopLeftDrawable.getBitmap();
 
