@@ -5,14 +5,14 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     testBuildType "profiling"
-
+    ndkVersion "20.0.5594570"
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode Integer.parseInt(VERSION_CODE)
         versionName VERSION_NAME
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         externalNativeBuild {
             cmake {
@@ -48,16 +48,16 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     resourcePrefix "wocr_"
 }
 
 dependencies {
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
-    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompatVersion"
     implementation "com.facebook.device.yearclass:yearclass:$rootProject.ext.yearclassVersion"
 
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
