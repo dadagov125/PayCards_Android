@@ -9,6 +9,7 @@
         android:theme="@style/Paycardsrecognizer"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:exported="true"
             android:name=".IntroActivity"
             android:label="@string/app_name">
 

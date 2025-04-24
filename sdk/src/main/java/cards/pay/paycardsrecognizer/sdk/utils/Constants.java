@@ -2,14 +2,12 @@ package cards.pay.paycardsrecognizer.sdk.utils;
 
 import androidx.annotation.RestrictTo;
 
-import cards.pay.paycardsrecognizer.sdk.BuildConfig;
-
 @RestrictTo(RestrictTo.Scope.LIBRARY)
 public class Constants {
 
     private Constants() { }
 
-    public static final boolean DEBUG = BuildConfig.DEBUG;
+    public static final boolean DEBUG = true;
 
     public static final String ASSETS_DIR = "cardrecognizer";
 

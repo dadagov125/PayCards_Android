@@ -138,11 +138,8 @@ public class CardDetectionStateView extends View {
     }
 
     private void initCornerDrawables(Context context) {
-        BitmapDrawable tempDrawable = (BitmapDrawable) context.getResources().getDrawable(R.drawable.wocr_card_frame_rect_corner_top_left);
-        Drawable mutatedDrawable = DrawableCompat.wrap(tempDrawable).mutate();
-        int color = ContextCompat.getColor(getContext(), android.R.color.holo_purple);
-        DrawableCompat.setTint(mutatedDrawable, color);
-        mCornerTopLeftDrawable = (BitmapDrawable) mutatedDrawable;
+        mCornerTopLeftDrawable = (BitmapDrawable) context.getResources().getDrawable(R.drawable.wocr_card_frame_rect_corner_top_left);
+
         Matrix m = new Matrix();
         Bitmap bitmap = mCornerTopLeftDrawable.getBitmap();
 

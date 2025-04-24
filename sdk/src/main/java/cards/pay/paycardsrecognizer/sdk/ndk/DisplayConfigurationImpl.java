@@ -6,8 +6,8 @@ import androidx.annotation.VisibleForTesting;
 import android.util.Log;
 import android.view.Display;
 
-import cards.pay.paycardsrecognizer.sdk.BuildConfig;
 import cards.pay.paycardsrecognizer.sdk.ndk.RecognitionConstants.WorkAreaOrientation;
+import cards.pay.paycardsrecognizer.sdk.utils.Constants;
 
 import static cards.pay.paycardsrecognizer.sdk.ndk.RecognitionConstants.WORK_AREA_ORIENTATION_LANDSCAPE_LEFT;
 import static cards.pay.paycardsrecognizer.sdk.ndk.RecognitionConstants.WORK_AREA_ORIENTATION_LANDSCAPE_RIGHT;
@@ -19,7 +19,7 @@ public class DisplayConfigurationImpl implements DisplayConfiguration {
 
     private static final String TAG = "DisplayConfigImpl";
 
-    private static final boolean DBG = BuildConfig.DEBUG;
+    private static final boolean DBG = Constants.DEBUG;
 
     private static final int LANDSCAPE_ORIENTATION_CORRECTION = -90;
 

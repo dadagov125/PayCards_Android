@@ -11,13 +11,13 @@ import com.facebook.device.yearclass.YearClass;
 
 import java.util.Locale;
 
-import cards.pay.paycardsrecognizer.sdk.BuildConfig;
 import cards.pay.paycardsrecognizer.sdk.ndk.RecognitionCore;
+import cards.pay.paycardsrecognizer.sdk.utils.Constants;
 
 @RestrictTo(RestrictTo.Scope.LIBRARY)
 public final class RecognitionAvailabilityChecker {
 
-    private static final boolean DBG = BuildConfig.DEBUG;
+    private static final boolean DBG = Constants.DEBUG;
 
     public static final String TAG = "CameraChecker";
 

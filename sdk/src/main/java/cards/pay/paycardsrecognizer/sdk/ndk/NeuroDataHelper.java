@@ -10,12 +10,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import cards.pay.paycardsrecognizer.sdk.BuildConfig;
 import cards.pay.paycardsrecognizer.sdk.utils.Constants;
 
 final class NeuroDataHelper {
 
-    private static final boolean DBG = BuildConfig.DEBUG;
+    private static final boolean DBG = Constants.DEBUG;
     private static final String TAG = "RecognitionCore";
 
     private final File mDataBasePath;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <cards.pay.paycardsrecognizer.sdk.camera.widget.CameraPreviewLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/wocr_card_recognition_view"
     android:layout_width="match_parent"
@@ -32,9 +32,9 @@
 
     <TextView
         android:id="@+id/wocr_powered_by_paycards_link"
+        style="@style/wocr_PaycardsButton"
         android:text="@string/wocr_powered_by_pay_cards"
         app:wocr_layout_cardAlignGravity="bottom|left"
-        tools:ignore="SpUsage"
-        style="@style/wocr_PaycardsButton" />
+        tools:ignore="SpUsage" />
 
 </cards.pay.paycardsrecognizer.sdk.camera.widget.CameraPreviewLayout>

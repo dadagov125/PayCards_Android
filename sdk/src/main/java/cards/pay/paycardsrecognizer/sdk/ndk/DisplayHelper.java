@@ -5,11 +5,11 @@ import android.util.Log;
 import android.view.Display;
 import android.view.Surface;
 
-import cards.pay.paycardsrecognizer.sdk.BuildConfig;
+import cards.pay.paycardsrecognizer.sdk.utils.Constants;
 
 final class DisplayHelper {
 
-    private static final boolean DBG = BuildConfig.DEBUG;
+    private static final boolean DBG = Constants.DEBUG;
     private static final String TAG = "DisplayHelper";
 
     private DisplayHelper() {}

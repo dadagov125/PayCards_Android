@@ -4,8 +4,8 @@ import android.graphics.PointF;
 import android.graphics.Rect;
 import android.util.Log;
 
-import cards.pay.paycardsrecognizer.sdk.BuildConfig;
 import cards.pay.paycardsrecognizer.sdk.camera.OrientationHelper;
+import cards.pay.paycardsrecognizer.sdk.utils.Constants;
 
 class CardRectCoordsMapper {
 
@@ -29,7 +29,7 @@ class CardRectCoordsMapper {
 
     private static final float DEFAULT_CARD_HOLDER_FONT_SIZE = 27;
 
-    private static final boolean DBG = BuildConfig.DEBUG;
+    private static final boolean DBG = Constants.DEBUG;
 
     private static final String TAG = "CardRectCoordsMapper";
 

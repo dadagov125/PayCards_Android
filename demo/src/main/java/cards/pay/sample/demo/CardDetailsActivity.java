@@ -21,6 +21,7 @@ import java.lang.reflect.Method;
 import cards.pay.paycardsrecognizer.sdk.Card;
 import cards.pay.paycardsrecognizer.sdk.ScanCardIntent;
 import cards.pay.paycardsrecognizer.sdk.ScanCardIntent.CancelReason;
+import cards.pay.paycardsrecognizer.sdk.utils.Constants;
 import cards.pay.sample.demo.validation.CardExpiryDateValidator;
 import cards.pay.sample.demo.validation.CardHolderValidator;
 import cards.pay.sample.demo.validation.CardNumberValidator;
@@ -93,7 +94,7 @@ public class CardDetailsActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_SCAN_CARD) {
             if (resultCode == Activity.RESULT_OK) {
                 Card card = data.getParcelableExtra(ScanCardIntent.RESULT_PAYCARDS_CARD);
-                if (BuildConfig.DEBUG) Log.i(TAG, "Card info: " + card);
+                if (Constants.DEBUG) Log.i(TAG, "Card info: " + card);
                 setCard(card);
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 @CancelReason final int reason;

@@ -1,6 +1,6 @@
-apply plugin: 'com.android.application'
-
-uploadArchives.enabled = false
+plugins {
+    id 'com.android.application'
+}
 
 ext.private = new Properties()
 if (rootProject.file('private.properties').exists()) {
@@ -17,7 +17,7 @@ android {
         versionCode Integer.parseInt(DEMO_APP_VERSION_CODE)
         versionName DEMO_APP_VERSION_NAME
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        resConfigs "en"
+        resourceConfigurations += ['en']
     }
     signingConfigs {
         release
@@ -39,21 +39,28 @@ android {
         }
     }
     packagingOptions {
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/NOTICE.txt'
+        resources {
+            excludes += ['META-INF/LICENSE.txt', 'META-INF/NOTICE.txt']
+        }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    namespace 'cards.pay.sample.demo'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(path: ":sdk")
-    //debugCompile project(path: ":sdk", configuration: 'release')
-    //releaseCompile project(path: ":sdk", configuration: 'release')
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
-    implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompatVersion"
-    implementation "androidx.gridlayout:gridlayout:$rootProject.ext.gridLayoutVersion"
-    implementation "com.google.android.material:material:$rootProject.ext.materialVersion"
-    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.gridlayout:gridlayout:1.0.0"
+    implementation "com.google.android.material:material:1.9.0"
+    testImplementation "junit:junit:4.13.2"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
 if (ext.private.getProperty("release.StoreFile") != null) {

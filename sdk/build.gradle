@@ -1,16 +1,13 @@
 apply plugin: 'com.android.library'
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     testBuildType "profiling"
-    ndkVersion "20.0.5594570"
+    ndkVersion "25.2.9519653"
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode Integer.parseInt(VERSION_CODE)
-        versionName VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -35,7 +32,6 @@ android {
         }
         debug {
             jniDebuggable true
-            debuggable true
         }
         profiling {
             initWith debug
@@ -48,29 +44,18 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     resourcePrefix "wocr_"
+    namespace 'cards.pay.paycardsrecognizer.sdk'
 }
 
 dependencies {
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
-    implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompatVersion"
-    implementation "com.facebook.device.yearclass:yearclass:$rootProject.ext.yearclassVersion"
-
-    testImplementation "junit:junit:$rootProject.ext.junitVersion"
-}
-
-afterEvaluate { project ->
-    android.libraryVariants.all { variant ->
-        tasks.androidJavadocs.doFirst {
-            include '**/cards/pay/paycardsrecognizer/sdk/*.java'
-            options.encoding = "utf-8"
-            options.charSet = "utf-8"
-            options.showFromPublic()
-            failOnError false
-        }
-    }
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "com.facebook.device.yearclass:yearclass:2.1.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation "junit:junit:4.13.2"
 }
